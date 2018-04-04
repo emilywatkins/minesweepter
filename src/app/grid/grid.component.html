@@ -1,0 +1,15 @@
+<p>
+  grid works!
+</p>
+
+<form>
+  <input #newXCoord>
+  <input #newYCoord>
+  <button (click)="generateBoard(newXCoord.value,newYCoord.value); newXCoord.value=''; newYCoord.value='';">Generate board</button>
+</form>
+
+<div class="container">
+  <div *ngFor="let tile of board">
+    <h4>{{tile.coordinate}}</h4>
+  </div>
+</div>
