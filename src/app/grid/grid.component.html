@@ -9,7 +9,7 @@
 </form>
 
 <div class="container">
-  <div *ngFor="let tile of board">
+  <div *ngFor="let tile of board?.tiles">
     <h4>{{tile.coordinate}}</h4>
   </div>
 </div>

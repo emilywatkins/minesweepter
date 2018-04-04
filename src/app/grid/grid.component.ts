@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tile } from '../tile.model';
+import { Board } from '../board.model'
 
 @Component({
   selector: 'app-grid',
@@ -13,20 +14,20 @@ export class GridComponent implements OnInit {
   ngOnInit() {
   }
 
-  board: Tile[] = this.generateBoard(?);
+  board;
 
   generateBoard(x,y) {
-    let board: Tile[] = [];
+    this.board = new Board();
     for (var i = 0; i<x; i++) {
     	for (var j = 0; j<y; j++) {
         let coord = [];
     	  coord.push(i, j);
         let newTile = new Tile(coord);
-        board.push(newTile);
+        this.board.tiles.push(newTile);
       }
 	  }
-    console.log(board);
-    return board;
+    console.log(this.board);
+    return this.board;
   }
 }
 
