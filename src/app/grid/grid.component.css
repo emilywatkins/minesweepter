@@ -1,0 +1,22 @@
+.box {
+  height: 40px;
+  width: 40px;
+  background-color: #999;
+  border: 1px;
+  margin: 5px;
+  display:inline-block;
+}
+
+.breakBox {
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  border: 1px;
+  margin: 5px;
+  float: left;
+}
+
+
+.boxContainer {
+  background-color: blue;
+}

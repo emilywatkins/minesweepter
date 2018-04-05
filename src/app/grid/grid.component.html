@@ -8,18 +8,11 @@
   <button (click)="generateBoard(newXCoord.value,newYCoord.value); newXCoord.value=''; newYCoord.value='';">Generate board</button>
 </form>
 
-<div class="container">
-  <span *ngFor="let tile of board?.tiles">
-    <span *ngIf="tile.coordinate[1]===0">
-      [{{tile.coordinate}}]
-    </span>
-  </span>
-</div>
+<!-- <div class="container" style="width: (parseint(newYCoord.value) * 50) px"> -->
 
-<!-- <div class="container">
-  <span *ngFor="let tile of board?.tiles">
-    <span ng-repeat="">
-    </span>
-  </span>
-
-</div> -->
+<span *ngFor="let tile of board?.tiles; let i = index">
+  <div *ngIf="tile.coordinate[1] == 0; then breakBox"></div>
+  <div *ngIf="tile.coordinate[1] != 0; then box"></div>
+  <ng-template #breakBox><div class="boxContainer"><div class="breakBox">[{{tile.coordinate}}]</div></div></ng-template>
+  <ng-template #box><div class="box">[{{tile.coordinate}}]</div></ng-template>
+</span>
