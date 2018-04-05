@@ -15,13 +15,13 @@
   <div *ngIf="tile.coordinate[1] != 0; then box"></div>
 
   <ng-template #box>
-    <div class="b box">
+    <div [class]="this.display(tile)">
     </div>
   </ng-template>
 
   <ng-template #breakBox>
     <div class="boxContainer">
-      <div class="b breakBox">
+      <div [class]="this.display(tile)">
       </div>
     </div>
   </ng-template>

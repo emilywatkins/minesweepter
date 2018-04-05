@@ -40,15 +40,19 @@ export class GridComponent implements OnInit {
   }
 
   display(tile){
-    if (tile.coordinate[1] == 0){
-      return "b breakBox";
+    console.log(tile);
+    if (tile.coordinate[1] == 0) {
+      if (tile.bomb == true){
+        return "bomb breakBox";
+      } else {
+        return "b breakBox";
+      }
     } else if (tile.coordinate[1] != 0) {
-      return  "b box";
-    } else {
-      return "b box";
+      if (tile.bomb == true){
+        return "bomb box";
+      } else {
+        return "b box";
+      }
     }
   }
 }
-
-
-//create board object, generateBoard creates new Board. show that board in page.
