@@ -29,6 +29,26 @@ export class GridComponent implements OnInit {
     console.log(this.board);
     return this.board;
   }
+
+  generateBomb(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    console.log(min,max);
+    console.log(Math.floor(Math.random() * (max - min)) + min);
+    let randomIndex = Math.floor(Math.random() * (max - min)) + min;
+    this.board.tiles[randomIndex].bomb = true;
+  }
+
+  display(tile){
+    if (tile.coordinate[1] == 0){
+      return "b breakBox";
+    } else if (tile.coordinate[1] != 0) {
+      return  "b box";
+    } else {
+      return "b box";
+    }
+  }
 }
+
 
 //create board object, generateBoard creates new Board. show that board in page.

@@ -5,14 +5,26 @@
 <form>
   <input #newXCoord>
   <input #newYCoord>
-  <button (click)="generateBoard(newXCoord.value,newYCoord.value); newXCoord.value=''; newYCoord.value='';">Generate board</button>
+  <button (click)="generateBoard(newXCoord.value,newYCoord.value); generateBomb(0,(newXCoord.value*newYCoord.value)); newXCoord.value=''; newYCoord.value=''; ">Generate board</button>
 </form>
 
 <!-- <div class="container" style="width: (parseint(newYCoord.value) * 50) px"> -->
 
-<span *ngFor="let tile of board?.tiles; let i = index">
+<span *ngFor="let tile of board?.tiles">
   <div *ngIf="tile.coordinate[1] == 0; then breakBox"></div>
   <div *ngIf="tile.coordinate[1] != 0; then box"></div>
-  <ng-template #breakBox><div class="boxContainer"><div class="breakBox">[{{tile.coordinate}}]</div></div></ng-template>
-  <ng-template #box><div class="box">[{{tile.coordinate}}]</div></ng-template>
+
+  <ng-template #box>
+    <div class="b box">
+    </div>
+  </ng-template>
+
+  <ng-template #breakBox>
+    <div class="boxContainer">
+      <div class="b breakBox">
+      </div>
+    </div>
+  </ng-template>
+
+
 </span>

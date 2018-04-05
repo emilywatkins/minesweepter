@@ -1,25 +1,34 @@
-.box {
-  height: 40px;
-  width: 40px;
-  background-color: #999;
-  background-image: url('../../img/flag.png');
+.b {
+  background-image: url('../../img/happyface.png');
   background-size: cover;
   border: 1px;
   margin: 5px;
+  background-size: cover;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+
+.bomb {
+  background-image: url('../../img/bomb.png');
+  background-size: cover;
+  border: 1px;
+  margin: 5px;
+  background-size: cover;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+
+.box {
   display:inline-block;
 }
 
 .breakBox {
-  height: 40px;
-  width: 40px;
-  background-image: url('../../img/flag.png');
-  background-size: cover;
-  border: 1px;
-  margin: 5px;
   float: left;
 }
 
-
 .boxContainer {
   background-color: blue;
+  
 }
