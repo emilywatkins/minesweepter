@@ -3,9 +3,13 @@
 </p>
 
 <form>
-  <input #newXCoord>
-  <input #newYCoord>
-  <button (click)="generateBoard(newXCoord.value,newYCoord.value); generateBomb(0,(newXCoord.value*newYCoord.value)); newXCoord.value=''; newYCoord.value=''; ">Generate board</button>
+  x-tiles: <input #newXCoord><br>
+  y-tiles: <input #newYCoord><br>
+  <button (click)=
+  "generateBoard(newXCoord.value,newYCoord.value);
+   generateBomb(0,(newXCoord.value*newYCoord.value),((newXCoord.value*newYCoord.value)/4));
+   newXCoord.value='';
+   newYCoord.value=''">Generate board</button>
 </form>
 
 <!-- <div class="container" style="width: (parseint(newYCoord.value) * 50) px"> -->

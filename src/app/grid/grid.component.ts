@@ -26,21 +26,28 @@ export class GridComponent implements OnInit {
         this.board.tiles.push(newTile);
       }
 	  }
-    console.log(this.board);
+    // console.log(this.board);
     return this.board;
   }
 
-  generateBomb(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    console.log(min,max);
-    console.log(Math.floor(Math.random() * (max - min)) + min);
-    let randomIndex = Math.floor(Math.random() * (max - min)) + min;
-    this.board.tiles[randomIndex].bomb = true;
+  generateBomb(min, max, number) {
+    // let number = Math.floor(max*.25);
+    console.log(number);
+    for (let i = 1; i <= number; i++) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      let randomIndex = Math.floor(Math.random() * (max - min)) + min;
+      if (this.board.tiles[randomIndex].bomb == false) {
+        this.board.tiles[randomIndex].bomb = true;
+      } else if (this.board.tiles[randomIndex].bomb == true) {
+        this.board.tiles[randomIndex+1].bomb = true;
+        // this.generateBomb(min, max, (number-1));
+      }
+    }
   }
 
   display(tile){
-    console.log(tile);
+    // console.log(tile);
     if (tile.coordinate[1] == 0) {
       if (tile.bomb == true){
         return "bomb breakBox";
