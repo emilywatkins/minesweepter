@@ -9,7 +9,17 @@
 </form>
 
 <div class="container">
-  <div *ngFor="let tile of board?.tiles">
-    <h4>{{tile.coordinate}}</h4>
-  </div>
+  <span *ngFor="let tile of board?.tiles">
+    <span *ngIf="tile.coordinate[1]===0">
+      [{{tile.coordinate}}]
+    </span>
+  </span>
 </div>
+
+<!-- <div class="container">
+  <span *ngFor="let tile of board?.tiles">
+    <span ng-repeat="">
+    </span>
+  </span>
+
+</div> -->
